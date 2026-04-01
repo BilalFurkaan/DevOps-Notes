@@ -28,3 +28,14 @@ done
 for dosya in /home/furkan/devops/*; do
     echo "Dosya bulundu: $dosya"
 done
+
+#Fonksiyon Tanımlama
+
+selamlama() {
+ echo "Merhaba" $1!
+ echo "DevOps Öğrenme sürecim " 
+ }
+
+#Fonksiyonu Çagirma
+selamlama "Furkan"
+selamlama "Bilal Furkan"
