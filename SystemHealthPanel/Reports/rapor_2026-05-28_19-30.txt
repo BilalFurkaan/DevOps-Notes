@@ -1,0 +1,18 @@
+=========================================
+Sistem Raporu: 2026-05-28 19:30
+=========================================
+Disk Kullanimi: %31
+RAM Kullanimi: 0.47 GB
+=== Sisteme Giris Yapanlar ===
+furkan   tty1         2026-05-26 02:06
+furkan   pts/1        2026-05-26 02:09 (192.168.64.1)
+Toplam: 2 kullanici
+Uptime:  19:30:32 up 4 days, 31 min,  2 users,  load average: 0.03, 0.01, 0.00
+=== CPU Kullanimi ===
+Anlik CPU Yuku: 2.2%
+
+=== En Cok CPU Kullanan 3 Process ===
+USER PID %CPU COMMAND
+root 798 0.2 /usr/bin/containerd
+root 114769 0.0 [kworker/0:1-events]
+root 114386 0.0 [kworker/3:1-events]
