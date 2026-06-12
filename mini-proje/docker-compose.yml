@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: furkan
+      POSTGRES_PASSWORD: devops123
+      POSTGRES_DB: visitdb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: ./app
+    environment:
+      DB_HOST: db
+      DB_NAME: visitdb
+      DB_USER: furkan
+      DB_PASSWORD: devops123
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+volumes:
+  db-data:
