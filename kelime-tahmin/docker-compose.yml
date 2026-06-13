@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: furkan
+      POSTGRES_PASSWORD: kelime.tahmin123
+      POSTGRES_DB: worddb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: ./app
+    environment:
+      DB_HOST: db
+      DB_NAME: worddb
+      DB_USER: furkan
+      DB_PASSWORD: kelime.tahmin123
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+volumes:
+  db-data:
